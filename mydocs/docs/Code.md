@@ -1,6 +1,6 @@
-# Code
+# **Code**
 
-# C#
+# **C#**
 
 ``` C#
 public int String1 = 12;
@@ -148,7 +148,7 @@ class student : person
 
 ```
 
-# Python
+# **Python**
 
-# MKDocs
+# **MKDocs**
 

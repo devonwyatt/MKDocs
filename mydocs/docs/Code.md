@@ -1,10 +1,60 @@
 # **Code**
 
 # **C#**
+``` C#
 
+```
+``` C#
+// EventHandlers
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Timers;
+using System.Threading.Tasks;
+using static System.Console;
+using Timer = System.Timers.Timer;
+
+namespace Events101
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            EventPublisher E = new EventPublisher();
+            EventSubscriber S = new EventSubscriber();
+            S.Subscribe();
+            Timer timer = new Timer(1000);
+            timer.Elapsed += (sender, e) => E.OnRaiseCustomEvent();
+            timer.Start();
+            WriteLine("Start");
+                for (; ; )
+                {
+                    WriteLine("Hello world");
+                    System.Threading.Thread.Sleep(1000);
+                }
+            }
+        }
+    
+
+    class EventPublisher
+    {
+        static public event EventHandler RaiseCustomEvent;
+        public void OnRaiseCustomEvent() => RaiseCustomEvent?.Invoke(this, new EventArgs());
+    }
+    class EventSubscriber
+    {
+        public void Subscribe() => EventPublisher.RaiseCustomEvent += MyEventHandler;
+        public void Unsubscribe() => EventPublisher.RaiseCustomEvent -= MyEventHandler;
+        public void MyEventHandler(object sender, EventArgs e) => WriteLine("Event received!");
+    }
+}
+
+``` 
 ``` C#
 public int String1 = 12;
-
+``` 
+``` C#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,7 +124,8 @@ students s;
 s = new student("steve", new DateTime(2000, 2, 2));
 students.Add(s);
 foreach (student x in studenta) Wrtiteline(x)
-
+``` 
+```  C#
 
 class myClass
 {

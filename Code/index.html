@@ -109,6 +109,147 @@
 <h1 id="c">C</h1>
 <pre><code class="language-C#">public int String1 = 12;
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Net.Security;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+namespace Steve
+{
+class MyClass
+{
+static void Main(string[] args)
+{
+Animal one = new Animal(&quot;Monkey&quot;, 2, &quot;black&quot;, &quot;&quot;);
+Animal two = new Animal(&quot;Cat&quot;, 4, &quot;red&quot;, &quot;&quot;);
+Animal three = new Animal(&quot;Dog&quot;, 4, &quot;Green&quot;, &quot;&quot;);
+Animal Four = new Animal(&quot;Fish&quot;, 0, &quot;blue&quot;, &quot;&quot;);
+pet P = new pet(&quot;Fish&quot;, &quot;Yellow&quot;, 2);
+Console.WriteLine(one);
+Console.WriteLine(two);
+Console.WriteLine(three);
+Console.WriteLine(Four);
+Console.WriteLine(P);
+}
+}
+
+class Animal
+{
+public string name;
+public string color;
+public int Numboflegs { get;private set; }
+public string label;
+
+public Animal(string name, int Numboflegs, string color, string label)
+{
+this.name = name;
+this.Numboflegs = Numboflegs;
+this.color = color;
+this.label = label;
+}
+public override string ToString()
+{
+if (Numboflegs == 2)
+label = &quot;Biped&quot;;
+else if (Numboflegs == 4)
+label = &quot;Quadraped&quot;;
+else label = &quot;undefied&quot;;
+return
+$&quot;The animal is a {this.name} and it has {this.Numboflegs} legs and it is {this.color} Which means it is a {this.label} &quot;;
+}
+} 
+class pet : Animal 
+{
+public string Name { get; set; }
+public pet(string Name, string color, int Numboflegs) : base(&quot;&quot;,Numboflegs,color,&quot;&quot;) {
+this.Name = Name;
+}
+
+public override string ToString()
+{ return $&quot;{base.ToString()}called {Name}&quot;;}
+
+
+}
+List &lt; student &gt; = new List&lt;students&gt;();
+students s;
+
+s = new student(&quot;steve&quot;, new DateTime(2000, 2, 2));
+students.Add(s);
+foreach (student x in studenta) Wrtiteline(x)
+
+
+class myClass
+{
+    static void Main(string[] args)
+    {
+
+
+        List&lt;student&gt; students = new List&lt;student&gt;()
+{
+        new student(&quot;steve&quot;, new DateTime(2000, 2, 2)),
+        new student(&quot;Jeff&quot;, new DateTime(2000, 3, 3)),
+        new student(&quot;Sara&quot;, new DateTime(2001, 4, 4)),
+        new student(&quot;Sarah&quot;, new DateTime(2003, 4, 4))
+};
+        students.Find((n) =&gt; n.name == &quot;steve&quot;)?.withdrawStudent();
+
+        foreach (student x in students.Where((n) =&gt; n.isactive)) { Console.WriteLine(x); }
+
+        var sublist = students.Where(student =&gt; student.name == &quot;steve&quot;);
+        foreach (student x in sublist)
+        { Console.WriteLine(x); }
+        Console.WriteLine($&quot;There are {student.Getnumbofstudents()} active students&quot;);
+    } }
+
+
+
+class person {
+    public string name { get; set; }
+    public DateTime dob { get;private set; }
+
+    public person(string name, DateTime dob)
+    {
+        this.name = name;
+        this.dob = dob;
+    }
+
+    public person(string name, int y, int m, int d) 
+        : this(name, new DateTime(y, m, d)) 
+    {
+
+    }
+    public override string ToString() =&gt; $&quot;{name}&quot;;
+
+
+}
+
+class student : person
+{
+    static private int lastnumallocated = 0;
+    static private int numberofstudents = 0;
+    public bool isactive { get; set; }
+
+    public string studnum { get; private set; }
+    public student(string name, DateTime dob) : base(name, dob)
+    {
+        lastnumallocated++;
+        numberofstudents++;
+        isactive= true; 
+        studnum = lastnumallocated.ToString();
+    }
+    public void withdrawStudent()
+    {
+        isactive= false;
+        numberofstudents--;
+    }
+
+    static public int Getnumbofstudents() =&gt; numberofstudents;
+    public override string ToString() =&gt; $&quot;{base.ToString()} ({studnum})&quot;;
+}
+
+
 </code></pre>
 <h1 id="python">Python</h1>
 <h1 id="mkdocs">MKDocs</h1></div>

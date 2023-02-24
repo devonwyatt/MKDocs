@@ -1,0 +1,11 @@
+site_name: My Docs
+
+nav:
+  - index.md
+  - about.md
+  - Scan: https://Scan.co.uk
+  - Steve: dev/steve.md
+
+mardwon_extensions:
+  - Extra
+
